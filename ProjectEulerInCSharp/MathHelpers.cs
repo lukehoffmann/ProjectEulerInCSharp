@@ -6,16 +6,6 @@ namespace ProjectEulerInCSharp
 {
     public static class MathHelpers
     {
-        public static bool IsEven(this int n)
-        {
-            return n % 2 == 0;
-        }
-
-        public static bool IsEven(this long n)
-        {
-            return n % 2 == 0;
-        }
-
         public static List<int> AllProductsOfXDigitNumbers(int xDigits)
         {
             var start = (int)Math.Pow(10, xDigits - 1); // e.g. when x is 3 > 10^(3 - 1) = 100
@@ -45,7 +35,7 @@ namespace ProjectEulerInCSharp
             {
                 // multiply by this factor until divisible by all others
                 product += highest;
-            } while (uniqueFactors.Any(factor => !product.MultipleOf(factor)));
+            } while (uniqueFactors.Any(factor => !product.IsMultipleOf(factor)));
 
             return product;
         }
@@ -60,7 +50,7 @@ namespace ProjectEulerInCSharp
 
             for (var i = 1; i <= limit; i++)
             {
-                if (!n.MultipleOf(i)) continue;
+                if (!n.IsMultipleOf(i)) continue;
                 factors.Add(i);
                 factors.Add(n / i);
             }

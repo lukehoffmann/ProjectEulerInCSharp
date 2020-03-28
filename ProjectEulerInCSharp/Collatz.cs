@@ -4,8 +4,6 @@ namespace ProjectEulerInCSharp
 {
     public class Collatz
     {
-        private readonly Dictionary<long, long> knownLengths = new Dictionary<long, long>();
-
         // The following iterative sequence is defined for the set of positive integers:
         //
         //      n → n/2 (n is even)
@@ -13,13 +11,24 @@ namespace ProjectEulerInCSharp
         //
         // Although it has not been proved yet (Collatz Problem), it is thought that all starting
         // numbers finish at 1.
-        public IEnumerable<long> Sequence(long n)
+
+        /// <summary>
+        /// Get the Collatz sequence for a given starting point
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static IEnumerable<long> Sequence(long n)
         {
             yield return n;
             while (n > 1)
-                yield return n = Next(n);
+                yield return n = Iterate(n);
         }
 
+        private readonly Dictionary<long, long> knownLengths = new Dictionary<long, long>();
+
+        /// <summary>
+        /// An optimized function for finding only the length of a given Collatz sequence.
+        /// </summary>
         public long SequenceLength(long n)
         {
             long count = 1;
@@ -32,7 +41,7 @@ namespace ProjectEulerInCSharp
                     break;
                 }
 
-                item = Next(item);
+                item = Iterate(item);
                 count++;
             }
 
@@ -40,7 +49,10 @@ namespace ProjectEulerInCSharp
             return count;
         }
 
-        private static long Next(long n)
+        /// <summary>
+        /// Get the next term in a Collatz sequence.
+        /// </summary>
+        private static long Iterate(long n)
         {
             return n.IsEven()
                 ? n / 2

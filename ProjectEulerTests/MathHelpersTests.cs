@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectEulerInCSharp;
 
@@ -12,9 +11,7 @@ namespace ProjectEulerTests
         [TestMethod]
         public void TestFactorsOf()
         {
-            List<long> result;
-
-            result = MathHelpers.FactorsOf(1);
+            var result = MathHelpers.FactorsOf(1);
             Assert.AreEqual(1, result.Count);
             Assert.IsTrue(result.Contains(1));
 

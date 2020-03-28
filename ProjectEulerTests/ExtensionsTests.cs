@@ -17,7 +17,7 @@ namespace ProjectEulerTests
             Assert.AreEqual(9, testString.DigitAtPosition(6));
             Assert.AreEqual(7, testString.DigitAtPosition(9));
         }
-    
+
         [TestMethod]
         public void IsPalindromicTest()
         {

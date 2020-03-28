@@ -15,7 +15,7 @@ namespace ProjectEulerInCSharp
             //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
             //The sum of these multiples is 23.
             return Enumerable.Range(0, 10)
-                .Where(i => i.MultipleOf(3) || i.MultipleOf(5))
+                .Where(i => i.IsMultipleOf(3) || i.IsMultipleOf(5))
                 .Sum();
         }
 
@@ -27,7 +27,7 @@ namespace ProjectEulerInCSharp
             //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
             //The sum of these multiples is 23.
             return Enumerable.Range(0, 1000)
-                .Where(i => i.MultipleOf(3) || i.MultipleOf(5))
+                .Where(i => i.IsMultipleOf(3) || i.IsMultipleOf(5))
                 .Sum();
         }
 
@@ -38,7 +38,7 @@ namespace ProjectEulerInCSharp
         public static int Problem2Solution()
         {
             return MathHelpers.FibonacciNumbersUpTo(4000000)
-                .Where(f => f.MultipleOf(2))
+                .Where(f => f.IsMultipleOf(2))
                 .Sum();
         }
 

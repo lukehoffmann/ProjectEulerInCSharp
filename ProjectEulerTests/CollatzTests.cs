@@ -19,8 +19,8 @@ namespace ProjectEulerTests
             // 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
             //
             // It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms.
-            var collatz = new Collatz();
-            var sequence = collatz.Sequence(13).ToList();
+
+            var sequence = Collatz.Sequence(13).ToList();
             Assert.AreEqual(10, sequence.Count);
             Assert.AreEqual(13, sequence[0]);
             Assert.AreEqual(40, sequence[1]);
