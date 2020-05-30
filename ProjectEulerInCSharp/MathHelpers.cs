@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProjectEulerInCSharp
 {
@@ -84,10 +86,15 @@ namespace ProjectEulerInCSharp
         /// <summary>
         /// An unordered list containing the number's factors that are prime numbers.
         /// </summary>
-        public static IEnumerable<long> PrimeFactorsOf(long n)
+        public static async Task<IEnumerable<long>> PrimeFactorsOf(long n)
         {
-            return FactorsOf(n)
-                .Where(f => f.IsPrime());
+            var result = new List<long>();
+            foreach (var factor in FactorsOf(n))
+            {
+                if (await Task.Run(() => factor.IsPrime()))
+                    result.Add(factor);
+            }
+            return result;
         }
 
         /// <summary>

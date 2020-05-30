@@ -47,7 +47,7 @@ namespace ProjectEulerInCSharp
         /// </summary>
         public static List<long> Problem3Example()
         {
-            return MathHelpers.PrimeFactorsOf(13195).ToList();
+            return MathHelpers.PrimeFactorsOf(13195).Result.ToList();
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace ProjectEulerInCSharp
         /// </summary>
         public static long Problem3Solution()
         {
-            return MathHelpers.PrimeFactorsOf(600851475143).Max();
+            return MathHelpers.PrimeFactorsOf(600851475143).Result.Max();
         }
 
         /// <summary>
