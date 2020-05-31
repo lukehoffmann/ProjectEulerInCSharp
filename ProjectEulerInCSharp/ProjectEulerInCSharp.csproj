@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxTraverser.cs" />
     <Compile Include="Collatz.cs" />
     <Compile Include="EulerProblems.cs" />
     <Compile Include="Extensions.cs" />

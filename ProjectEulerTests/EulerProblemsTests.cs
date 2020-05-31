@@ -151,5 +151,38 @@ namespace ProjectEulerTests
         {
             Assert.AreEqual(837799, EulerProblems.Problem14Solution());
         }
+
+        [TestMethod]
+        public void Problem15_ExampleRecursive()
+        {
+            // Starting in the top left corner of a 2×2 grid, and only being able to move
+            // to the right and down, there are exactly 6 routes to the bottom right corner.
+            Assert.AreEqual(6, new BoxTraverser(2).CountRoutesRecursive());
+            Assert.AreEqual(20, new BoxTraverser(3).CountRoutesRecursive());
+            Assert.AreEqual(70, new BoxTraverser(4).CountRoutesRecursive());
+            Assert.AreEqual(252, new BoxTraverser(5).CountRoutesRecursive());
+            Assert.AreEqual(924, new BoxTraverser(6).CountRoutesRecursive());
+            Assert.AreEqual(3432, new BoxTraverser(7).CountRoutesRecursive());
+        }
+
+        [TestMethod]
+        public void Problem15_Example()
+        {
+            // Starting in the top left corner of a 2×2 grid, and only being able to move
+            // to the right and down, there are exactly 6 routes to the bottom right corner.
+            Assert.AreEqual(6, new BoxTraverser(2).CountRoutes());
+            Assert.AreEqual(20, new BoxTraverser(3).CountRoutes());
+            Assert.AreEqual(70, new BoxTraverser(4).CountRoutes());
+            Assert.AreEqual(252, new BoxTraverser(5).CountRoutes());
+            Assert.AreEqual(924, new BoxTraverser(6).CountRoutes());
+            Assert.AreEqual(3432, new BoxTraverser(7).CountRoutes());
+        }
+
+        [TestMethod]
+        public void Problem15_Solution()
+        {
+            // How many such routes are there through a 20×20 grid ?
+            Assert.AreEqual(0, new BoxTraverser(20).CountRoutes());
+        }
     }
 }
