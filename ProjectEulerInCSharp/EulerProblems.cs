@@ -250,26 +250,6 @@ namespace ProjectEulerInCSharp
             return MathHelpers.SumOfPrimesBelow(2000000);
         }
 
-        public static long Problem11Example()
-        {
-            // In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
-            // The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
-
-            // Use 1-based index
-            const int x = 9;
-            const int y = 7;
-
-            return Problem11.RightDownProduct(x, y);
-        }
-
-        public static long Problem11Solution()
-        {
-            // What is the greatest product of four adjacent numbers in the same direction(up,
-            // down, left, right, or diagonally) in the 20×20 grid ?
-
-            return Problem11.HighestProduct();
-        }
-
         public static long Problem12Example()
         {
             // Let us list the factors of the first seven triangle numbers:

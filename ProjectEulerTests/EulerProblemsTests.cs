@@ -119,13 +119,19 @@ namespace ProjectEulerTests
         [TestMethod]
         public void Problem11_Example()
         {
-            Assert.AreEqual(1788696, EulerProblems.Problem11Example());
+            // In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+            // The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+
+            // Use 1-based index
+            Assert.AreEqual(1788696, Problem11.RightDownProduct(9, 7));
         }
 
         [TestMethod]
         public void Problem11_Solution()
         {
-            Assert.AreEqual(70600674, EulerProblems.Problem11Solution());
+            // What is the greatest product of four adjacent numbers in the same direction (up,
+            // down, left, right, or diagonally) in the 20×20 grid ?
+            Assert.AreEqual(70600674, Problem11.HighestProduct());
         }
 
         [TestMethod]
@@ -157,32 +163,53 @@ namespace ProjectEulerTests
         {
             // Starting in the top left corner of a 2×2 grid, and only being able to move
             // to the right and down, there are exactly 6 routes to the bottom right corner.
-            Assert.AreEqual(6, new BoxTraverser(2).CountRoutesRecursive());
-            Assert.AreEqual(20, new BoxTraverser(3).CountRoutesRecursive());
-            Assert.AreEqual(70, new BoxTraverser(4).CountRoutesRecursive());
-            Assert.AreEqual(252, new BoxTraverser(5).CountRoutesRecursive());
-            Assert.AreEqual(924, new BoxTraverser(6).CountRoutesRecursive());
-            Assert.AreEqual(3432, new BoxTraverser(7).CountRoutesRecursive());
+            //Assert.AreEqual(6, new BoxTraverser(2).CountRoutesRecursive());
+            //Assert.AreEqual(20, new BoxTraverser(3).CountRoutesRecursive());
+            //Assert.AreEqual(70, new BoxTraverser(4).CountRoutesRecursive());
+            //Assert.AreEqual(252, new BoxTraverser(5).CountRoutesRecursive());
+            //Assert.AreEqual(924, new BoxTraverser(6).CountRoutesRecursive());
+            //Assert.AreEqual(3432, new BoxTraverser(7).CountRoutesRecursive());
+            //Assert.AreEqual(12870, new BoxTraverser(8).CountRoutesRecursive());
+            //Assert.AreEqual(48620, new BoxTraverser(9).CountRoutesRecursive());
+            //Assert.AreEqual(184756, new BoxTraverser(10).CountRoutesRecursive());
+            //Assert.AreEqual(705432, new BoxTraverser(11).CountRoutesRecursive());
+            //Assert.AreEqual(2704156, new BoxTraverser(12).CountRoutesRecursive());
+            //Assert.AreEqual(10400600, new BoxTraverser(13).CountRoutesRecursive());
+            //Assert.AreEqual(40116600, new BoxTraverser(14).CountRoutesRecursive());
+            //Assert.AreEqual(155117520, new BoxTraverser(15).CountRoutesRecursive());
+            //Assert.AreEqual(601080390, new BoxTraverser(16).CountRoutesRecursive());
+            //Assert.AreEqual(2333606220, new BoxTraverser(17).CountRoutesRecursive());
+            Assert.AreEqual(9075135300, new BoxTraverser(18).CountRoutesRecursive());
         }
 
         [TestMethod]
-        public void Problem15_Example()
-        {
+        public void Problem15_ExampleDepthFirst()
+         {
             // Starting in the top left corner of a 2×2 grid, and only being able to move
             // to the right and down, there are exactly 6 routes to the bottom right corner.
-            Assert.AreEqual(6, new BoxTraverser(2).CountRoutes());
-            Assert.AreEqual(20, new BoxTraverser(3).CountRoutes());
-            Assert.AreEqual(70, new BoxTraverser(4).CountRoutes());
-            Assert.AreEqual(252, new BoxTraverser(5).CountRoutes());
-            Assert.AreEqual(924, new BoxTraverser(6).CountRoutes());
-            Assert.AreEqual(3432, new BoxTraverser(7).CountRoutes());
+            //Assert.AreEqual(6, new BoxTraverser(2).CountRoutesDepthFirst());
+            //Assert.AreEqual(20, new BoxTraverser(3).CountRoutesDepthFirst());
+            //Assert.AreEqual(70, new BoxTraverser(4).CountRoutesDepthFirst());
+            //Assert.AreEqual(252, new BoxTraverser(5).CountRoutesDepthFirst());
+            //Assert.AreEqual(924, new BoxTraverser(6).CountRoutesDepthFirst());
+            //Assert.AreEqual(3432, new BoxTraverser(7).CountRoutesDepthFirst());
+            //Assert.AreEqual(12870, new BoxTraverser(8).CountRoutesDepthFirst());
+            //Assert.AreEqual(48620, new BoxTraverser(9).CountRoutesDepthFirst());
+            //Assert.AreEqual(184756, new BoxTraverser(10).CountRoutesDepthFirst());
+            //Assert.AreEqual(705432, new BoxTraverser(11).CountRoutesDepthFirst());
+            //Assert.AreEqual(2704156, new BoxTraverser(12).CountRoutesDepthFirst());
+            //Assert.AreEqual(10400600, new BoxTraverser(13).CountRoutesDepthFirst());
+            //Assert.AreEqual(40116600, new BoxTraverser(14).CountRoutesDepthFirst());
+            //Assert.AreEqual(155117520, new BoxTraverser(15).CountRoutesDepthFirst());
+            Assert.AreEqual(601080390, new BoxTraverser(16).CountRoutesDepthFirst());
+            //Assert.AreEqual(2333606220, new BoxTraverser(17).CountRoutesDepthFirst());
         }
 
-        [TestMethod]
+        [TestMethod, Ignore] // too slow
         public void Problem15_Solution()
         {
             // How many such routes are there through a 20×20 grid ?
-            Assert.AreEqual(0, new BoxTraverser(20).CountRoutes());
+            Assert.AreEqual(137846528820L, new BoxTraverser(20).CountRoutesRecursive());
         }
     }
 }
